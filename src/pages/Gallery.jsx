@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid'
-import { PlusSmIcon as PlusSmIconOutline } from '@heroicons/react/outline'
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NumberFormat from 'react-number-format';
@@ -24,9 +22,24 @@ function Gallery() {
   return (
     <div className="Gallery">
 
+      {/* HEADER */}
+<div className="bg-white">
+<div className="relative  pb-40">
+        <div className="absolute inset-2">
+          <img
+            className="h-full w-full object-cover"
+            src="/images/headerCompras.png"
+            alt=""
+          />        
+        </div>
+        <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">        
+        </div>
+      </div>  
+    </div>
+
 <div className="bg-white">
        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-         <h2 className="text-xl font-bold text-gray-900">Nuestros Productos</h2>
+         <h2 className="text-xl font-bold text-gray-900">Propiedades</h2>
 
          <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
            {products.map((product) => (
@@ -66,14 +79,14 @@ function Gallery() {
                <div className="mt-2"> 
                 <Link
                   to={`/gallery/${product._id}`}
-                  className="relative flex bg-gray-100 
+                  className="relative flex bg-cyan-600 
                             border border-transparent 
                             rounded-md py-2 px-8 
                             items-center justify-center 
-                            text-sm font-small text-gray-900 
-                            hover:bg-gray-200"
+                            text-sm font-small text-white
+                            hover:bg-cyan-700"
                 >
-                  Detalles <span className="sr-only">, {product.name}</span>
+                  DETALLES DE LA PROPIEDAD <span className="sr-only">, {product.name}</span>
                 </Link>
                 </div>
               

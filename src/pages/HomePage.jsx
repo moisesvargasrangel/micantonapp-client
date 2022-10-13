@@ -1,143 +1,132 @@
-import { NewspaperIcon, PhoneIcon, SupportIcon, HomeIcon, PresentationChartLineIcon, OfficeBuildingIcon} from '@heroicons/react/outline'
 
-const headingProducts = [
+const tiers = [
   {
-    name: 'Negocio',
-    href: '#',
-    description:
-      'Sabemos lo importante que es tu negocio para ti, por eso nos comprometemos a darle el mejor servicio.',
-    icon: PresentationChartLineIcon,
+    href: '/contact',
+    features: [
+      '¿Tienes una propiedad que deseas vender?'
+    ],
+    description: '¿Quieres vender la casa que compraste con Infonavit que no ocupas o está invadida o desvalijada y ya no quieres que te sigan descontando?',
+    button: 'Vender',
   },
   {
-    name: 'Hogar e Interiores',
-    href: '#',
-    description:
-      'Déjanos complacer las necesidades de tu familia, fabricando muebles con la calidad que ellos se merecen.',
-    icon: HomeIcon,
-  },
-  {
-    name: 'Exposiciones y Stands',
-    href: '#',
-    description:
-      '¿Necesitas llevar tu negocio a otro nivel? Nos encantaría poder coolaborar contigo para dar ese gran salto.',
-    icon: OfficeBuildingIcon,
-  },
-  
+    href: '/gallery',
+    features: [
+      '¿Buscas aprovechar al máximo tu dinero al comprar una propiedad?'
+    ],
+    description: 'Revisa entre el catálogo de opciones para encontrar tu casa ideal.',
+    button: 'Comprar',
+  },  
 ]
 
-const homeProducts = [
+const people = [
   {
-    name: '2017 Expo Mueble Internacional - Stand Whirlpool',
-    location: 'Expo Guadalajara, GDL.',
+    name: '"Vendí mi propiedad y me liberé de deudas y problemas"',
+    role: 'Tenía 5 años pagando una casa que ya no podía mantener, estaba abandonada y vandalizada. El crédito me estaba dejando sin dinero. En TE VENDO MI CANTÓN, me ayudaron a deshacerme de la deuda y volver a cotizar en INFONAVIT.',
     imageUrl:
-      '/images/homepage/aa.jpeg',
-  },
+      'https://pregonerobaja.com.mx/wp-content/uploads/2021/02/IMG_6934.jpg',
+    names: 'Juan y Patricia, Ciudad de México'
+    },
   {
-    name: 'Cocina Intregal',
-    location: 'Huixquilucan, Edo de Mex.',
+    name: '"Encontré la casa de mis sueños"',
+    role: 'Encontré la opción ideal para mi y para mi familia, a un precio accesible y con la asesoría durante todo el proceso de compra.',
     imageUrl:
-      '/images/gallery/1.jpg',
-  },
+      'https://i.pinimg.com/550x/a8/f3/db/a8f3db5df7900d600a381d3568c81676.jpg',
+    names: 'Samuel, Estado de México'
+    },
   {
-    name: '2022 Expo Mueble Internacional - Stand Whirlpool',
-    location: 'Expo Guadalajara, GDL.',
+    name: '"Liberé mi deuda, vendí mi casa"',
+    role: 'Me asesoraron y acompañaron durante todo el proceso para vender mi casa. Me liberé de la deuda INFONAVIT que tenía al seguir pagando una casa que no ocupabamos.',
     imageUrl:
-      '/images/homepage/cc.png',
-  },
-  {
-    name: '2019 Expo Mueble WTC - Stand Mabe',
-    location: 'WTC, CDMX.',
-    imageUrl:
-      '/images/homepage/bb.jpg',
-  },
-  {
-    name: 'Cocina de Exhibición - Whirlpool',
-    location: 'Palacio de Hierro Polanco, CDMX.',
-    imageUrl:
-      '/images/homepage/z.jpg',
-
-  },
-  {
-    name: 'Cocina Integral',
-    location: 'Roma, CDMX.',
-    imageUrl:
-      '/images/homepage/a.jpg',
-
-  },
-
+      'https://rio19.mx/wp-content/uploads/2021/11/casa-infonavit.jpg',
+    names: 'Carolina, Ciudad de México'
+    },
 ]
-  
+
 export default function HomePage() {
   return (
-    <div className="bg-white">
-      <div className="relative pb-32 bg-gray-500">
-        <div className="absolute inset-0">
+    <div>
+
+{/* HEADER */}
+<div className="bg-white">
+    <div className="relative  pb-40">
+        <div className="absolute inset-2">
           <img
-            className="w-full h-full object-cover"
-            src="/images/about-us.png"
+            className="h-full w-full object-cover"
+            src="/images/header.png"
             alt=""
-          />
-          <div className=" absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
+          />        
         </div>
-        <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5l lg:text-5xl">¡Tu espacio está en las mejores manos!</h1>
-          <p className="mt-6 max-w-3xl text-xl text-gray-300">
-          Nos encargamos de acondicionar tu espacio de acuerdo a tus necesidades, 
-          para que tú, tu familia y tus clientes disfruten del mejor lugar.
-          </p>
+        <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">        
         </div>
-      </div>
+      </div>  
+    </div>
 
-      {/* Overlapping cards */}
-      <section
-        className="-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8"
-        aria-labelledby="contact-heading"
-      >
 
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-          {headingProducts.map((link) => (
-            <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
-              <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-                <div className="absolute top-0 p-3 inline-block bg-red-700 rounded-xl shadow-lg transform -translate-y-1/2">
-                  <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
+{/* BOTONES */}
+
+      <div className="mt-8 bg-white pb-12 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24">
+        <div className="relative">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-md space-y-4 lg:grid lg:max-w-5xl lg:grid-cols-2 lg:gap-5 lg:space-y-0">
+              {tiers.map((tier) => (
+                <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                  <div className="bg-white px-6 py-8 sm:p-10 sm:pb-6">
+                   
+                    <div className="mt-4 flex items-baseline text-6xl font-bold tracking-tight">       
+                      <span className="ml-1 text-2xl text-center font-medium tracking-normal text-black">{tier.features}</span>
+                    </div>
+                    <div className="mt-4 flex items-baseline text-6xl font-bold tracking-tight">       
+                      <span className="ml-1 text-base text-center font-medium tracking-normal text-gray-600">{tier.description}</span>
+                    </div>         
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between space-y-6 bg-gray-50 px-6 pt-6 pb-8 sm:p-10 sm:pt-6">        
+                    <div className="rounded-md shadow">
+                      <a
+                        href={tier.href}
+                        className="flex items-center justify-center rounded-md border border-transparent bg-cyan-600 px-5 py-3 text-base font-medium text-white hover:bg-cyan-700"
+                        aria-describedby="tier-standard"
+                      >
+                        {tier.button}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
-                <p className="mt-4 text-base text-gray-500">{link.description}</p>
-              </div>
-
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </div>     
+      </div>
+   
+      {/* TESTIMONIOS */}
 
       <div className="bg-white">
-      <div className="mx-auto py-0 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-0">
-        <div className="space-y-8">
+      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-0">
+        <div className="space-y-12">
           <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Bienvenido a Movar Diseño</h2>
-            <p className="text-xl text-gray-500">
-              Déjanos mostrate un poco de nuestro trabajo...
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Experiencias con TE VENDO MI CANTÓN</h2>
+            
           </div>
           <ul
-            location="list"
+            role="list"
             className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
           >
-            {homeProducts.map((person) => (
+            {people.map((person) => (
               <li key={person.name}>
                 <div className="space-y-4">
                   <div className="aspect-w-3 aspect-h-2">
-                    <img className="object-cover shadow-lg rounded-lg" src={person.imageUrl} alt="" />
+                    <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
                   </div>
 
                   <div className="space-y-2">
-                    <div className="text-lg leading-6 font-medium space-y-1">
+                    <div className="space-y-4 text-center text-lg font-small leading-6">
                       <h3>{person.name}</h3>
-                      <p className="text-red-700">{person.location}</p>
-                    </div>
-                    <ul location="list" className="flex space-x-5">
-
-                    </ul>
+                      <p className="text-gray-600 text-base">{person.role}</p>
+                    </div>         
+                  </div>
+                  <div className="space-y-2 text-center">
+                    <div className="space-y-1 text-lg font-small leading-6">
+                      <p className="text-black" >{person.names}</p>
+                    </div>         
                   </div>
                 </div>
               </li>

@@ -40,10 +40,10 @@ function AddProduct(props) {
             <form onSubmit={handleSubmit}>
               <div className="shadow sm:rounded-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <h2 className="text-xl font-bold text-gray-900">Agregar producto</h2>
+                <h2 className="text-xl font-bold text-gray-900">Agregar Propiedad</h2>
                   <div>
                     <label className="block text-sm font-medium text-gray-700">
-                      Nombre del Producto
+                      Nombre de la Propiedad
                     </label>
 
                       <div className="mt-1">
@@ -56,7 +56,7 @@ function AddProduct(props) {
                           className="shadow-sm focus:ring-indigo-500
                                      focus:border-indigo-500 mt-1 block w-full 
                                      sm:text-sm border border-gray-300 rounded-md"
-                          placeholder="Nombre del Producto"
+                          placeholder="Nombre de la Propiedad"
                          
                         />
                       </div>
@@ -85,19 +85,19 @@ function AddProduct(props) {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700">
-                      Material
+                      Ubicación
                     </label>
 
                       <div className="mt-1">
                         <input
                           type= "text"
-                          name="material"
+                          name="ubicacion"
                           value={material}
                           rows={3}
                           className="shadow-sm focus:ring-indigo-500
                                      focus:border-indigo-500 mt-1 block w-full 
                                      sm:text-sm border border-gray-300 rounded-md"
-                          placeholder="Material"
+                          placeholder="Ubicación"
                           onChange={(e) => setMaterial(e.target.value)}
                         />
                       </div>
@@ -152,14 +152,14 @@ function AddProduct(props) {
                     border border-transparent 
                     shadow-sm text-sm font-medium 
                     rounded-md text-white 
-                    bg-gray-700 
-                    hover:bg-gray-600  
+                    bg-cyan-600 
+                    hover:bg-cyan-700  
                     focus:outline-none 
                     focus:ring-2 
                     focus:ring-offset-2 
                     focus:ring-indigo-500"
                   >
-                    Agregar Producto
+                    Agregar Propiedad
                   </button>
                 </div>
               </div>

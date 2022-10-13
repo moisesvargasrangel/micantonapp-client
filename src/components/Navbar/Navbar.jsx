@@ -1,13 +1,12 @@
-import { Fragment, React } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { React } from 'react'
+import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const navigation = [
-  { name: 'Inicio', href: '/', current: false },
-  { name: 'Catálogo', href: '/gallery', current: false },
-  { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
+  { name: 'Vender Propiedad', href: '/contact', current: false },
+  { name: 'Comprar Propiedad', href: '/gallery', current: false },
 ]
 
 function classNames(...classes) {
@@ -18,17 +17,17 @@ export default function Navbar(props) {
   const {user, handleLogout} = props;
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-9xl mx-auto shadow px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* ---MOBILE MENU BUTTON---*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md 
-                                            text-gray-400 
+                <Disclosure.Button className="inline-flex shadow items-center justify-center p-2 rounded-md 
+                                            text-cyan-800 
                                             hover:text-white
-                                            hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">               
+                                            hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">               
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -41,19 +40,20 @@ export default function Navbar(props) {
                   <Link to="/">
                     <img
                       className="block lg:hidden h-8 w-auto"
-                      src="/images/logo-navbar.png"
+                      src="/images/icon-title.png"
                       alt="LogoNavbar"
                     />
                   </Link>
                   <Link to="/">
                   <img
                     className="hidden lg:block h-10 w-auto"
-                    src="/images/logo-navbar.png"
+                    src="/images/icon-title.png"
                     alt="Logo Navbar"
                     href="/"
                   />
                   </Link>
                 </div>
+                
                 <div className="hidden sm:block sm:m-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -61,7 +61,7 @@ export default function Navbar(props) {
                           key={item.name}
                           to={item.href}
                           className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            item.current ? 'bg-cyan-900 text-white' : 'text-gray-400 hover:text-cyan-700',
                             'px-3 py-2 rounded-md text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -75,25 +75,6 @@ export default function Navbar(props) {
                 <div className="hidden sm:block sm:m-auto">
                   <div className="flex space-x-4">
 
-    {/* -IF NOT LOGGED IN-*/}
-    
-                    {!user && (
-                      <>
-                          <Link
-                              to="/auth/login"
-                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
-                          >
-                            Iniciar Sesión
-                          </Link>
-
-                          <Link
-                              to="/auth/signup"
-                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'        
-                          >
-                            Registrate
-                          </Link>
-                      </>                      
-                    )}
 
      {/* -IF LOGGED IN- */}  
                     
@@ -103,7 +84,7 @@ export default function Navbar(props) {
                           Bienvenid@ <b>{user?.username}</b> 
                           </div>
 
-                          {user.role == "admin" &&
+                          {user.role === "admin" &&
                               <Link
                                   to="/newproduct"
                                   className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
@@ -116,11 +97,11 @@ export default function Navbar(props) {
                               onClick={handleLogout}                            
                               className= ' text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 pr-4 rounded-md text-sm font-medium'>
                                 
-                                {/* {user?.email} */}
+                                
                                Cerrar Sesión
                           </button>
                       </>
-                    )}
+                    )} 
                   </div>
                 </div>
               </div>

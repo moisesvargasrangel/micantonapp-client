@@ -50,7 +50,7 @@ export default function LogIn({authenticate}) {
             <div>
                 <img
                   className="h-20 w-auto"
-                  src="/images/heading.png"
+                  src="/images/icon-title.png"
                   alt="Workflow"
                 />
                 
@@ -58,7 +58,7 @@ export default function LogIn({authenticate}) {
                 <p className="mt-2 text-sm text-gray-600">
                   ¿No tienes cuenta? {' '}
                   
-                  <a href="/auth/signup" className="font-medium text-red-700 hover:text-gray-900">
+                  <a href="/auth/signup" className="font-medium text-cyan-700 hover:text-gray-900">
                     Registrate aquí
                   </a>
                 </p>
@@ -129,8 +129,8 @@ export default function LogIn({authenticate}) {
                                 py-2 px-4 border border-transparent 
                                 rounded-md shadow-sm text-sm font-medium 
                                 text-white 
-                                bg-gray-700
-                                hover:bg-gray-600 
+                                bg-cyan-600
+                                hover:bg-cyan-700 
                                 focus:outline-none focus:ring-2 
                                 focus:ring-offset-2 focus:ring-red-500"
                     >
@@ -146,7 +146,7 @@ export default function LogIn({authenticate}) {
         <div className="hidden lg:block relative w-0 flex-1">
           <img
             className="absolute inset-0 h-full w-full object-cover"
-            src="/images/img-login.jpg"
+            src="https://img10.naventcdn.com/avisos/18/00/64/83/20/72/720x532/338337836.jpg"
             alt=""
           />
         </div>

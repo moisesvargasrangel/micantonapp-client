@@ -6,12 +6,8 @@ import * as PATHS from "../utils/paths";
 import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
 import HomePage from "../pages/HomePage";
-import AboutUs from "../pages/AboutUs";
-import Gallery from "../pages/Gallery";
-import QyA from "../pages/QyA";
 
-//PRODUCTS ACTION
-import AddProduct from "../pages/ProductCrud/AddProductPage";
+
 
 const routes = (props) => {
   const { user } = props;
